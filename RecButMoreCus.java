@@ -20,5 +20,6 @@ public class RecButMoreCus {
         for(int i = 0;i < firstValue; i++){
             System.out.println(line);
         }
+        scanner.close();
     }
 }

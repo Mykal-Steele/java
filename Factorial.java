@@ -12,5 +12,6 @@ public class Factorial{
             
         }
         System.out.println(counter);
+        scanner.close();
     }
 }
