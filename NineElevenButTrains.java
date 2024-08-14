@@ -11,36 +11,31 @@ public class NineElevenButTrains {
         int bomb = scanner.nextInt();
         String trainCart = "";
         String bombRadius = "";
-
-        bombRadius += (bomb - 1);
-        bombRadius += bomb;
-        bombRadius += (bomb + 1);
-  
-
-        for (int i = 1; i <= numOfTrainCart; i++) {
-            trainCart += i;
-        }
-
+        bombRadius += (bomb - 1) + " ";
+        bombRadius += bomb + " ";
+        bombRadius += bomb + 1;
         
-        for (char ch : bombRadius.toCharArray()) {
-            trainCart = trainCart.replace(Character.toString(ch), "");
+        if(bombRadius.equals("0 1 2")){
+            bombRadius = "1 2";
         }
-        String output = "";
-        System.out.println(trainCart.length() + "tran len");
         
-
-        for (char ch: trainCart.toCharArray()){
-            if(output.length() <= trainCart.length() - 1)
-            {
-                output += Character.toString(ch) + " ";
+        for(int i = 1; i<=numOfTrainCart; i++){
+            
+            
+            if(i == numOfTrainCart){
+                trainCart += i;
+            }else{
+                trainCart += i + " ";
             }
-                else{
-                output += Character.toString(ch);
-            }
+            
         }
-        if(trainCart.length() == 0){
+        
+        String output = trainCart.replace(bombRadius + " ", "");
+        
+        if(output.equals(bombRadius)){
             System.out.println("DIE");
-        }else
-        {System.out.println(output);}
+        }     else{
+        System.out.println(output);
+        }
     }
 }
