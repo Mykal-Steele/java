@@ -3,7 +3,7 @@
  */
 import java.util.Arrays;
 import java.util.Scanner;
-public class smt {
+public class PackCod {
 
     public static void rev1(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -202,16 +202,14 @@ public class smt {
         }
         System.out.println(output);
     }
-    public static void q22(String[] args) {
+    
+    public static void replaceFirst(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String inp = scanner.nextLine();
+        String toReplace = scanner.nextLine();
         String replaceWith = scanner.nextLine();
-        String output = "";
-        for(int i = 0; i<inp.length();i++){
-             char ch = inp.charAt(i);
-             
-
-        }
+        String ne = inp.replaceFirst(toReplace, replaceWith);
+        System.out.println(ne);
     }
 
 
