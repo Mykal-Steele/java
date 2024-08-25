@@ -1,7 +1,7 @@
 /**
  * PackCod class demonstrates various string manipulation and utility methods.
  */
-import java.util.Scanner;
+import java.util.*;
 
 public class PackCod {
     //{1, 3, 4, 5, 7, 11, 12, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25}
@@ -215,13 +215,10 @@ public class PackCod {
             }
         }
         System.out.println(sum);
-        scanner.close();  // Close the scanner
+        scanner.close();  
     }
 
-    // Method to check if the input string is a palindrome by comparing it to its reversed version.
-    
-
-    // Method to remove consecutive duplicate characters from the input string and print the result.
+   
     public static void sp21(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String inp = scanner.nextLine();
@@ -236,10 +233,10 @@ public class PackCod {
             }
         }
         System.out.println(output);
-        scanner.close();  // Close the scanner
+        scanner.close();  
     }
 
-    // Method to replace the first occurrence of a substring in the input string and print the result.
+    
     public static void replaceFirst22(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String inp = scanner.nextLine();
@@ -250,7 +247,182 @@ public class PackCod {
         scanner.close();  // Close the scanner
     }
 
-    public static void main(String[] args) {
+
+
+    
+
+
+   
+        public static void ww(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int start = scanner.nextInt();
+            int end = scanner.nextInt();
+            
+            // Determine which number is greater
+            int greater = Math.max(start, end);
+            int smaller = Math.min(start, end);
+            
+            // Print the sequence
+            for (int i = greater; i >= smaller; i--) {
+                for (int j = greater; j >= smaller; j--) {
+                    if (j >= i) {
+                        System.out.print(j + " ");
+                    }
+                }
+            }
+            
+            // Close the scanner
+            scanner.close();
+        }
+    
+        public static void minToDay(String[] args){
+            Scanner scanner = new Scanner(System.in);
+            int min = scanner.nextInt();
+            
+            int day = min / 1440;
+            int year = day /365;
+            int las = day % 365;
+            System.out.println(year+" " + las);
+            
+        }
+        public static void reverseString(String args[]){
+            Scanner scanner = new Scanner(System.in);
+            int len = 3;
+            String[] inp = new String[len];
+
+
+        }
         
+        public static void uwu(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String inp = scanner.nextLine().toLowerCase();
+            String[] sp = inp.split("[\\s+]");
+            
+            String output = "";
+            for (String word : sp) {
+                word = revToReuse(word);
+                output += Character.toUpperCase(word.charAt(0)) + word.substring(1) + " ";
+                
+            }
+            System.out.println(output.trim());
+            scanner.close();  // Close the scanner
+        }
+        public static void classGroup(String[] args){
+            
+            Scanner scanner = new Scanner(System.in);
+            int size = scanner.nextInt();
+            int[] ar = new int[size];
+            for(int i = 0; i<size; i++){
+                ar[i] = scanner.nextInt();
+            }
+            int smallest = ar[1];
+            for(int i : ar){
+                if(i< smallest){
+                    i = smallest;
+                }
+            }
+            System.out.println();
+        }
+        public static void duplicate(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int size = scanner.nextInt();
+            String[] ar = new String[size];
+            String emp = "";
+    
+            for (int i = 0; i < size; i++) {
+                ar[i] = scanner.next();
+            }
+    
+            for (String str : ar) {
+                for (char ch : str.toCharArray()) {
+                    if (emp.indexOf(ch) == -1) {
+                        emp += ch;
+                    }
+                }
+            }
+    
+            System.out.println(emp);
+        }
+
+        public static void decry(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String inp = scanner.nextLine();
+    
+            int[] tempArr = new int[inp.length()];
+            int arrIndex = 0;
+    
+            int currentNumber = 0;
+            boolean hasDigits = false;
+    
+            for (int i = 0; i < inp.length(); i++) {
+                char ch = inp.charAt(i);
+    
+                if (ch >= 'a' && ch <= 'z') {
+                    if (hasDigits) {
+                        tempArr[arrIndex++] = currentNumber;
+                        currentNumber = 0;
+                        hasDigits = false;
+                    }
+                    tempArr[arrIndex++] = ch - 'a' + 1;
+                } else if (Character.isDigit(ch)) {
+                    currentNumber = currentNumber * 10 + (ch - '0');
+                    hasDigits = true;
+                } else {
+                    if (hasDigits) {
+                        tempArr[arrIndex++] = currentNumber;
+                        currentNumber = 0;
+                        hasDigits = false;
+                    }
+                    tempArr[arrIndex++] = ch;
+                }
+            }
+    
+            if (hasDigits) {
+                tempArr[arrIndex++] = currentNumber;
+            }
+    
+            int[] arr = Arrays.copyOf(tempArr, arrIndex);
+            int cum = Arrays.stream(arr).sum();
+            
+            
+    
+            // Find unique prime factors of the cumulative sum
+            int uniquePrimeSum = sumUniquePrimeFactors(cum);
+            System.out.println(uniquePrimeSum);
+        }
+    
+        // Method to find the sum of unique prime factors
+        public static int sumUniquePrimeFactors(int n) {
+            Set<Integer> uniqueFactors = new HashSet<>();
+    
+            // Divide n by 2 to get all 2s as factors
+            while (n % 2 == 0) {
+                uniqueFactors.add(2);
+                n /= 2;
+            }
+    
+            // n must be odd at this point, so we can skip even numbers
+            for (int i = 3; i <= Math.sqrt(n); i += 2) {
+                while (n % i == 0) {
+                    uniqueFactors.add(i);
+                    n /= i;
+                }
+            }
+    
+            // If n is still greater than 2, then n itself is a prime number
+            if (n > 2) {
+                uniqueFactors.add(n);
+            }
+    
+            // Sum up the unique prime factors
+            int sum = 0;
+            for (int factor : uniqueFactors) {
+                sum += factor;
+            }
+    
+            return sum;
+        }
+    public static void main(String[] args) {
+        decry(args);
     }
 }

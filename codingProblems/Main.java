@@ -1,26 +1,31 @@
-import java.util.*;
-public class Main{
-    public static void main(String args[]){
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String inp = scanner.nextLine();
-        String reversed = new StringBuilder(inp).reverse().toString();
-        String outputI = "";
-        String outputR = "";
-        System.out.println(reversed);
-        for(int i = 0; i<inp.length();i++){
-        char inC = inp.charAt(i);
-        System.out.println(inC + " II");
-        
-        outputI += inC + " ";
-        
+
+        int counter = scanner.nextInt();
+        scanner.nextLine(); // Consume the leftover newline character
+        String[] sp = new String[counter];
+        for (int i = 0; i < counter; i++) {
+            sp[i] = scanner.nextLine().toLowerCase();
         }
-        for(int i = 0; i<reversed.length();i++){
-            char reC = reversed.charAt(i);
-            System.out.println(reC + " RR");
-            outputR += reC + " ";
+
+        String output = "";
+        for (String word : sp) {
+            // Reverse the word directly in the loop
+            int len = word.length();
+            String reversedWord = "";
+            for (int i = len - 1; i >= 0; i--) {
+                reversedWord += word.charAt(i);
+            }
+
+            // Capitalize the first letter of the reversed word and add it to the output
+            output += Character.toUpperCase(reversedWord.charAt(0)) + reversedWord.substring(1) + " ";
         }
-        System.out.println(outputI+ " || " + outputR);
-        String fin = outputI.replace(outputR, "");
-        System.out.println("THIS IS " + fin);
+
+        System.out.println(output.trim());
+        scanner.close(); // Close the scanner
     }
 }
