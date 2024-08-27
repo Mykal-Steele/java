@@ -55,6 +55,29 @@ public class PackCod {
         }
         return output;
     }
+    public static String removeEverySecondChar(String input) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < input.length(); i += 2) // i = 1 if you want odd num
+        {
+            result.append(input.charAt(i));
+        }
+        return result.toString();
+    }
+    public static String[] stringSplitByEachCharToArrays(String input) {
+        String[] output = new String[input.length()];
+        for (int i = 0; i < input.length(); i++) {
+            char cur = input.charAt(i);
+            output[i] = String.valueOf(cur);  
+        }
+        return output;  
+    }
+    public static String arrayToString(String[] input){
+        String output= "";
+        for(int i = 0; i<input.length;i++){
+            output += input[i];
+        }
+        return output;
+    }
 
     // Method to convert input string to uppercase and print it.
     public static void toUpper3(String[] args) {
@@ -667,7 +690,21 @@ public class PackCod {
         }
 
 
+        public static void test(String[] args) {
+            
+            Scanner scanner = new Scanner(System.in);
 
+            
+            String x = scanner.nextLine();
+            long tim = System.currentTimeMillis();
+            String newx = revToReuse(x );
+            System.out.println(newx+ "Time: " + (System.currentTimeMillis() - tim));
+            
+            StringBuffer xb = new StringBuffer(scanner.nextLine());
+            tim = System.currentTimeMillis();
+            xb.reverse();
+            System.out.println(xb + "Time: " + (System.currentTimeMillis() - tim));
+        }
 
 
 
@@ -681,6 +718,6 @@ public class PackCod {
         }
     
         public static void main(String[] args) {
-          
+            
         }
 }
