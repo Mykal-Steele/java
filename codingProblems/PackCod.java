@@ -716,8 +716,201 @@ public class PackCod {
         char[] split = str.toCharArray();
         System.out.println(Arrays.toString(split));
         }
-    
-        public static void main(String[] args) {
+        public static void printDiagonal(String input) {
+            for (int i = 0; i < input.length(); i++) {
+                // Print spaces before the character
+                for (int j = 0; j < i; j++) {
+                    System.out.print(" ");
+                }
+                // Print the character
+                System.out.println(input.charAt(i));
+            }
+        }
+        public static void printPattern(int size) {
+            for (int i = 0; i < size; i++) {
+                // Print stars
+                for (int j = 0; j < size - i - 1; j++) {
+                    System.out.print("*");
+                }
+                
+                // Print numbers
+                for (int k = 0; k <= i; k++) {
+                    System.out.print(k + 1);
+                }
+                
+                // Move to the next line
+                System.out.println();
+            }
+        }
+        public static void wei(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int size = scanner.nextInt();
+        
+        
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                System.out.print("*");
+            }
+            for (int k = 0; k <= i * 2; k++) {
+                System.out.print(k + 1);
+            }
+            System.out.println();
+        }
+      
+        for (int i = size - 1; i >= 1; i--) {
+            for (int j = 0; j < size - i ; j++) {
+                System.out.print("*");
+            }
+            for (int k = 0; k <= (i -1) * 2; k++) {
+                System.out.print(k + 1);
+            }
+            System.out.println();
+        }
+        
+        scanner.close();
             
         }
-}
+        public static void back(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int size = scanner.nextInt();
+            for(int i = 0; i < size; i++){
+                for(int j = size; j >= size - i ; j --){
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            for(int i = 0; i < size; i++){
+            
+                for(int j = 0; j<size - i- 1; j ++){
+                    System.out.print("*");
+                }
+                if(i < size - 1)
+                {System.out.println();}
+            }
+            
+        }
+        public static void rep(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String inp = scanner.nextLine();
+            inp = inp.replaceAll("[?]+", "?");
+            inp = inp.replaceAll("[!]+", "!");
+            System.out.println(inp);
+        }
+        public static void disgues(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String inp = scanner.nextLine();
+            int cat = inp.split("cat", -1).length;
+            int rat = inp.split("rat", -1).length;
+            int uwu = inp.trim().split("uwu", -1).length;
+            System.out.println(uwu-1);
+        }
+        public static void theTHing(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int size = scanner.nextInt();
+            for(int i =size -1;i >= 0;i--){
+                for(int j = 0;j<size - i  ; j++){
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            for(int i =0;i<size;i++){
+                for(int j = 0;j<size - i -1; j++){
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            
+        }
+        public static void triangle(String[] args) {
+            Scanner scan = new Scanner(System.in);
+        int rows = scan.nextInt();
+
+        // Print the centered triangle
+        for (int i = 1; i <= rows; i++) {
+            // Print leading spaces
+            for (int j = rows; j > i; j--) {
+                System.out.print(" ");
+            }
+            // Print asterisks
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+            // Move to the next line
+            System.out.println();
+        }
+
+        scan.close();
+        }
+        public static void xBs(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            int n = sc.nextInt();
+           
+            StringBuilder r = new StringBuilder();
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (i == 0 || j == 0 || i == j || i == n - 1 || j == n - 1 || i + j == n-1)
+                        r.append("*");
+                    else
+                        r.append("-");
+                }
+                r.append("\n");
+            }
+    
+            System.out.print(r);
+            sc.close();
+        }
+        public static void arrayList(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            ArrayList<Integer> inp = new ArrayList<>(Arrays.asList(1,2,4));
+            String out = "";
+            for(int i = 0; i<inp.size(); i++){
+                String curo =  String.valueOf(inp.get(i));
+                out += curo;
+                
+            }
+            
+            out = revToReuse(out);
+            System.out.println(out);
+            
+            
+        }
+        public static void xParrenCorref(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            String s = sc.next();
+            sc.close();
+            int len = s.length();
+            if (len % 2 == 0) {
+                System.out.println("Invalid word");
+                return;
+            }
+            for (int i = 0; i < len; i++) {
+                for (int j = 0; j < len; j++) {
+                    if (i == j) {
+                        System.out.print(s.charAt(i));
+                    } else if (i + j == len - 1) {
+                        System.out.print(s.charAt(len - 1 - i));
+                    } else {
+                        System.out.print(" ");
+                    }
+                }
+                System.out.println();
+        }
+        }
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            int size = sc.nextInt();
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size - i - 1; j++) {
+                    System.out.print("*");
+                }
+                for (int k = 0; k <= i * 2; k++) {
+                    System.out.print(k + 1);
+                }
+                for (int j = size-i-1; j >=1; j--) {
+                    System.out.print("*");
+                }
+                System.out.println();
+
+        }
+    }}
+
