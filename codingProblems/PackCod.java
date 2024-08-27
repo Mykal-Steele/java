@@ -5,7 +5,13 @@ import java.util.*;
 
 public class PackCod {
     //{1, 3, 4, 5, 7, 11, 12, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25}
-
+    public static void laptopDestroyer(String[] args) {
+        while(true){
+            for(int i = 0; true; i++)
+            
+            {System.out.println(i);}
+        }
+    }
     // Method to remove all digits, lowercase letters, and spaces from the input string.
     public static void dgrm(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -422,7 +428,259 @@ public class PackCod {
     
             return sum;
         }
-    public static void main(String[] args) {
-        decry(args);
-    }
+        public static int reverseInt(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String out = scanner.nextLine();
+            String withneg = "-";
+            if(!out.substring(0,1).equals("-")){
+                String rev = revToReuse(out);
+                
+                return Integer.parseInt(rev);
+            }else{
+                withneg += revToReuse(out);
+                return Integer.parseInt(withneg.substring(0, withneg.length()-1));
+            }
+            
+        }
+            public static void bacteria(String[] args){
+                Scanner scanner = new Scanner(System.in);
+                int amout = scanner.nextInt();
+                int counter = 0;
+                
+                while(amout > 0)
+                    {if(amout %2 != 0){
+                        counter++;
+                        amout--;
+                        amout /= 2;
+                    }else if(amout % 2 == 0){
+                        amout /= 2;
+                    }}
+                    System.out.println(counter);
+
+                    
+                }
+        public static void stringToInt(String[] args){
+            Scanner scanner = new Scanner(System.in);
+            String inp = scanner.nextLine().toLowerCase().trim();
+            inp = inp.replaceAll(" ", "");
+            inp = inp.replaceAll("[^0-9]", "");
+            int output = Integer.parseInt(inp);
+            System.out.println(output);
+
+
+        }       
+        // public static void regularExpressionMatching(String[] args){
+        //     Scanner scanner = new Scanner(System.in);
+        //     String inp = scanner.nextLine();
+        //     String chec = scanner.nextLine();
+        //     boolean output = false;
+        //     if(chec.substring(chec.length()-2) == ".*"){
+        //         if(chec.substring(0, chec.length()-2).equals(inp)){
+        //             output = true;
+        //         }
+
+        //     }
+        //     System.out.println(output);
+        // }
+        // NO
+
+        public static void romanToInt(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int inp = scanner.nextInt();
+            char oneSym = 'I';
+            char fiveSym = 'V';
+            char tenSym = 'X';
+            char fiftySym = 'L';
+            char oneHunSym = 'C';
+            char fiveHunSym = 'D';
+            char oneThoSym = 'M';
+            String output = "";
+            
+            
+            if(inp > 1000){
+                
+                int mDigit = inp /1000;  
+                int  dDigit = mDigit/500;
+
+            }
+            
+        }
+
+
+
+
+        
+        public static void xPattern(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            
+            String inp = scanner.nextLine();
+            int size = inp.length();
+            String[][] row = new String[size][size];
+            
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    row[i][j] = " ";
+                }
+            }
+            for (int i = 0; i < size; i++) {
+                char cur = inp.charAt(i);
+                row[i][i] = String.valueOf(cur);
+            }
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    System.out.print(row[i][j]);
+                    System.out.print(row[i][size-j-1]);
+                }
+                System.out.println(); 
+            }
+            // for (int i = 0; i < size; i++) {
+            //     for (int j = 0; j < size; j++) {
+            //         System.out.print(row[i][size-j-1]);
+            //     }
+            //     System.out.println(); 
+            // }
+
+            
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+        public static void multipleToOne(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String inp = scanner.nextLine();
+            inp = inp.replaceAll("[?]+","?");
+            inp = inp.replaceAll("[!]+", "!");
+            System.out.println(inp);
+            // for(int i = 0; i < inp.length(); i++){
+            //     char cur = inp.charAt(i);
+            //     if((cur == '!') ||( cur == '?')){
+                    
+            //         break;
+            //     }
+            // }
+        }
+        public static void sameCatand(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String inp = scanner.nextLine();
+            String output = "";
+            int catCounter = 0;
+            int mouseCounter = 0;
+            int normalCounter = 0;
+            for(int i = 0; i <inp.length(); i++){
+                char cur = inp.charAt(i);
+                output += cur;
+                normalCounter++;
+                if((normalCounter > 2) && ((!output.equals("cat")) || (!output.equals("mou")))){
+                    output = "";
+                    normalCounter = 0;
+                }
+                System.out.println(output + "WFW");
+                if(output.equals("cat")){
+                    catCounter++;
+                    output = "";
+                }
+                else if(output.equals("mouse")){
+                    mouseCounter++;
+                    output = "";
+                }
+
+            }
+            System.out.println(mouseCounter + " This is howmany mouse");
+            System.out.println(catCounter + " This is howmany cat");
+        }
+        public static void rec(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            
+            
+            int size = scanner.nextInt();
+            char star = '*';
+            char dash = '-';
+            String m = "";
+            String[][] row = new String[size][size];
+            for(int i = 0; i< size; i++)
+            {
+                m += star;
+                
+            }
+            
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    row[0][j] = "*";
+                    row[i][j] = "-";
+                    
+                    
+                }
+            }
+            for (int i = 0; i < size; i++) {
+                
+                row[i][i] = String.valueOf(star);
+                
+            }
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    System.out.print(row[i][j]);
+                    System.out.print(row[i][size-j-1]);
+                }
+                System.out.println(); 
+            
+            }
+            
+            // for (int i = 0; i < size; i++) {
+            //     for (int j = 0; j < size; j++) {
+            //         System.out.print(row[i][size-j-1]);
+            //     }
+            //     System.out.println(); 
+            // }
+
+            
+            
+        }
+        public static void ef(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String inp = scanner.nextLine();    
+            
+            System.out.println(inp.split("cat", -1).length==inp.split("mouse", -1).length);
+        }
+        public static void mDuplicate(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String inp = scanner.nextLine();
+            int counter = 0;
+            String output = "";
+            
+            for(int i = 0; i<inp.length(); i++){
+                char cur = inp.charAt(i);
+                for(int j = 0; j<inp.length(); j++){
+                    ;
+                }
+
+
+            }
+        }
+
+
+
+
+
+
+        public static void smte(String[] args) {      
+        Scanner scanner  = new Scanner(System.in);
+        
+        String str = scanner.nextLine();
+
+        char[] split = str.toCharArray();
+        System.out.println(Arrays.toString(split));
+        }
+    
+        public static void main(String[] args) {
+          
+        }
 }
