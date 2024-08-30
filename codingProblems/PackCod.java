@@ -277,11 +277,6 @@ public class PackCod {
     }
 
 
-
-    
-
-
-   
         public static void ww(String[] args) {
             Scanner scanner = new Scanner(System.in);
             int start = scanner.nextInt();
@@ -874,6 +869,93 @@ public class PackCod {
             
             
         }
+        public static void midPartAndReverse(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            String s = sc.nextLine();
+            int mid = s.length() / 2;
+            String output = "";
+            StringBuilder first = new StringBuilder(s.substring(0, mid));
+            output += first.reverse().toString();
+            if (s.length() % 2 == 0) {
+              StringBuilder last = new StringBuilder(s.substring(mid));
+              output += last.reverse().toString();
+            } else {
+              StringBuilder last = new StringBuilder(s.substring(mid + 1));
+              output += s.charAt(mid) + last.reverse().toString();
+            }
+            System.out.println(output);
+            sc.close();
+          }
+          public static void midPartReverseAgain(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            String s = sc.nextLine();
+            String output = "";
+            int mid = s.length() / 2;
+            for (int i = 0; i < mid; i++) {
+              output += s.charAt(mid - 1 - i) + "";
+            }
+            if (s.length() % 2 != 0) {
+              output += s.charAt(mid) + "";
+              for (int i = s.length() - 1; i > mid; i--) {
+                output += s.charAt(i) + "";
+              }
+            } else {
+              for (int i = s.length() - 1; i >= mid; i--) {
+                output += s.charAt(i) + "";
+              }
+            }
+            System.out.println(output);
+            sc.close();
+          }
+          public static void repllacetheQuesiotswithOne(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            String sentence = sc.nextLine();
+            sentence = sentence.replaceAll("[!]+", "!");
+            sentence = sentence.replaceAll("[?]+", "?");
+            sc.close();
+            System.out.println(sentence);
+        }
+        public static void maine(String[] args) {
+            String n = "grr";
+            String ii = "grr";
+            System.out.println(n==ii);
+        }
+          public static void catandmouseThree(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            String input = sc.next();
+            int cat = 0;
+            int mouse = 0;
+            for (int i = 0; i < input.length() - 2; i++) {
+                if (input.charAt(i) == 'c' && input.charAt(i + 1) == 'a' && input.charAt(i + 2) == 't')
+                    cat++;
+            }
+            for (int i = 0; i < input.length() - 4; i++) {
+                if (input.charAt(i) == 'm' && input.charAt(i + 1) == 'o' && input.charAt(i + 2) == 'u'
+                        && input.charAt(i + 3) == 's' && input.charAt(i + 4) == 'e')
+                    mouse++;
+            }
+            if (cat == mouse)
+                System.out.println("true");
+            else
+                System.out.println("false");
+            sc.close();
+        }
+          public static void catandMouseLoopWay(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            String input = sc.next();
+            sc.close();
+            int cat = 0;
+            int mouse = 0;
+            for (int i = 0; i < input.length(); i++) {
+                // To avoid index out of bound
+                // Check condition first
+                if (i + 2 < input.length() && input.substring(i, i + 3).equals("cat"))
+                    cat++;
+                if (i + 4 < input.length() && input.substring(i, i + 5).equals("mouse"))
+                mouse++;
+            }
+            System.out.println(cat == mouse);
+        }
         public static void xParrenCorref(String[] args) {
             Scanner sc = new Scanner(System.in);
             String s = sc.next();
@@ -896,8 +978,14 @@ public class PackCod {
                 System.out.println();
         }
         }
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
+        public static void gurr(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String inp = scanner.nextLine();
+            String[] x = inp.split("*"); 
+            System.out.println(x);
+        }
+            public static void gegeg(String[] args) {
+                Scanner sc = new Scanner(System.in);
             int size = sc.nextInt();
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size - i - 1; j++) {
@@ -910,7 +998,11 @@ public class PackCod {
                     System.out.print("*");
                 }
                 System.out.println();
-
         }
-    }}
+        }
+            
+        public static void main(String[] args) {
+            maine(args);
+        }
 
+    }
