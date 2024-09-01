@@ -3,7 +3,7 @@ public class CocacolaDrinksFirst{
     public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             
-            String startsFirst = scanner.next(); // Read the first person as a String
+            String startsFirst = scanner.next(); 
             
             String startsSecond = startsFirst.equals("A") ? "B" : "A";
             int amountOfCoal = scanner.nextInt(); 
@@ -12,7 +12,7 @@ public class CocacolaDrinksFirst{
             int ran = 0;
         
             while (ran < amountOfCoal) {
-                ran = (i * i) + i; // Compute the number of drinks in the current round
+                ran = (i * i) + i; // Calculate the number of drinks in the current round
                 i++;
             }
         
