@@ -993,7 +993,7 @@ public class PackCod {
         public static void gurr(String[] args) {
             Scanner scanner = new Scanner(System.in);
             String inp = scanner.nextLine();
-            String[] x = inp.split("*"); 
+            String[] x = inp.split(""); 
             System.out.println(x);
         }
             public static void gegeg(String[] args) {
@@ -1017,9 +1017,26 @@ public class PackCod {
             int[] buyer = {3,5,7,8,2};
             int[] seller = {2,3,5,7};
         }
+        public static void set(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String endLoop = "";
+            Map<String, Integer> name = new HashMap<>();
+            while (!endLoop.equals("STOP")) {
+                endLoop = scanner.next();
+                if (!endLoop.equals("STOP")) {
+                    int value = scanner.nextInt();
+                    name.put(endLoop, value);
+                }
+            }
+            
+            for (Map.Entry<String, Integer> entry : name.entrySet()) {
+                System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+            }
+        }
+        
             
         public static void main(String[] args) {
-            
+            set(args);
         }
 
     }
