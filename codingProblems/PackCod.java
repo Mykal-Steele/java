@@ -9,7 +9,7 @@ public class PackCod {
         while(true){
             for(int i = 0; true; i++)
             
-            {System.out.println(i);}
+            {System.out.println(i*2/Math.PI);}
         }
     }
     // Method to remove all digits, lowercase letters, and spaces from the input string.
@@ -1074,12 +1074,56 @@ public class PackCod {
                 }
             }
         }
+        public static void toBinary(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int inp = scanner.nextInt();
+            String binary = "";
+            while(inp > 0){
+                int remainder = inp %2;
+                binary = remainder + binary;
+                inp/=2;
+            }
+            System.out.println(binary);
+        }
+        public static void qu(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String str = scanner.nextLine();
+            int catcount = 0;
+            int mout = 0;
+            int cat = str.split("cat", -1).length;
+            int mouse = str.split("mouse", -1).length;
 
+
+            if(cat == mouse){
+                System.out.println(true);
+            }else{
+                System.out.println(false);
+            }
+        }
+        public static void xagain(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int n = scanner.nextInt();
+            StringBuilder r = new StringBuilder();
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (i == 0 || j == 0 || i == j || i == n - 1 || j == n - 1 || i + j == n - 1)
+                        r.append("*");
+                    else
+                        r.append("-");
+                }
+                r.append("\n");
+            }
+    
+            System.out.print(r);
+            }
+        
         
     
             
         public static void main(String[] args) {
-            cl(args);
+            int[] x = {24,5,3};
+            
+            System.out.println(Arrays.toString(x));
         }
 
     }
