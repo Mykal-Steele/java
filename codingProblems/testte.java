@@ -1,6 +1,7 @@
-import java.util.*;
-public class tes{
-    public static void main(){
+import java.util.Scanner;
+
+public class testte {
+    public static void main(String args[]){
         Scanner scanner = new Scanner(System.in);
         String st = scanner.nextLine();
         for (char ch : st.toLowerCase().toCharArray()){

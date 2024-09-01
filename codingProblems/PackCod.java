@@ -915,11 +915,23 @@ public class PackCod {
             sc.close();
             System.out.println(sentence);
         }
-        public static void maine(String[] args) {
-            String n = "grr";
-            String ii = "grr";
-            System.out.println(n==ii);
-        }
+       
+        
+
+        public static void hoursToWeeks(String args[]){
+        Scanner scanner = new Scanner(System.in);
+        int hours = scanner.nextInt();
+        
+        int days = hours/24;
+        int leftoverHours = hours%24;
+        
+        int weeks = days/7;
+        int lefoverdays = days%7;
+        
+
+        System.out.println(weeks+" weeks, " + lefoverdays+ " days " + leftoverHours + " hours. ");
+    }
+
           public static void catandmouseThree(String[] args) {
             Scanner sc = new Scanner(System.in);
             String input = sc.next();
@@ -1000,9 +1012,14 @@ public class PackCod {
                 System.out.println();
         }
         }
+        public static void connectingMetals(String args[]){
+            Scanner scanner = new Scanner(System.in);
+            int[] buyer = {3,5,7,8,2};
+            int[] seller = {2,3,5,7};
+        }
             
         public static void main(String[] args) {
-            maine(args);
+            
         }
 
     }
