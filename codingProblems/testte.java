@@ -11,7 +11,8 @@ public class testte {
         emDetails.add(30);  // Example: age
 
         // Add the ArrayList to the HashMap
-        employee.put("Has", emDetails);\
+        employee.put("Has", emDetails);
+        
         
         // Print the HashMap
         System.out.println(employee);
