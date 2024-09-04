@@ -1138,9 +1138,185 @@ public class PackCod {
             System.out.print(r);
             }
         
+    public static void qm1(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        for(int i =1;i<=n;i++){
+            System.out.print(i +" ");
+        }
+    }
+    public static void qm2(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        for(int i = n; i >= 1; i--){
+            System.out.print(i + " ");
+        }
+    }
+    public static void qm3(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        int len = str.length();
+        String output = "";
+        for(int i = len-1; i >= 0; i--){
+            output += str.charAt(i);
+        }
+        System.out.println(output);
+    }
+    public static void qm4(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int lim = scanner.nextInt();
+        String even = "Even: ";
+        String odd = "Odd: ";
+        for(int i = 2; i<= lim; i+=2){
+            even += i + " ";
+        }
+        for(int i = 1; i<=lim; i+= 2){
+             odd += i + " ";
+        }
+
+        System.out.println(even);
+        System.out.println(odd);
+    }
+    public static void qm5(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        int len = str.length();
+        if(len % 2 == 0){
+            System.out.println("odd");
+        }else if(len %2==1){
+            System.out.println("even");
+        }
+    }
+    public static void qm6(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        String ori = str;
+        str = str.replaceAll("\\s", "");
         
+        int len = str.length();
+        if(len <= 5){
+            System.out.println(str.toLowerCase());
+        }else if(len <= 10){
+            System.out.println(str.toUpperCase());
+        }else{
+            System.out.println(str.substring(10));
+        }
+        System.out.println(ori);
+
+    }
+    public static void qm7(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        int sum = 1;
+        for(int i =1; i <= num; i++)
+        {
+            sum*=i;
+        }
+        System.out.println(sum);
+    }
+    
+    
+    public static void qm8(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        int a = 0;
+        int b = 1;
+        int sum = 1;
+        String out = "0 ";
+        for(int i = 1; sum <= num;i++){
+            out+= sum + " ";
+            sum = a+b;
+            a = b;
+            b =sum;
+        }
+        System.out.println(out);
+    }
+
+    public static void qm9(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        String binary = "";  
+        
+        while(num > 0){
+            int remainder = num % 2;
+            binary = remainder + binary;
+            num /= 2;
+        }
+        System.out.println(binary);
+    }
+    public static void qm10(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int year = scanner.nextInt();
+        int century = (year+99)/100;
+        String suffix = "";
+        if(century % 10 == 10 && century % 100 != 1){
+            suffix+="st";
+        }else if(century % 10 == 20 && century % 100 != 2){
+            suffix+="nd";
+        }else if(century % 10 == 30 && century % 100 != 3){
+            suffix+="rd";
+        }else{
+            suffix+="th";
+        }
+        System.out.println(century + suffix);
+    }
+    public static void hexConvert(String args[]) {
+        Scanner scanner = new Scanner(System.in);
+        int deci = scanner.nextInt();
+        int remainder;
+        String hex = "";
+        char[] hexChars = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+
+        while (deci > 0) {
+            remainder = deci % 16;
+            hex = hexChars[remainder] + hex;
+            deci = deci / 16;
+        }
+
+        System.out.println(hex);
+        scanner.close(); // Close the scanner to avoid resource leaks
+    }
+    public static void bianryToDecimal(String[]args){
+        Scanner scanner = new Scanner(System.in);
+        String binary = scanner.nextLine();
+        int decimal = Integer.parseInt(binary, 16);
+        System.out.println(decimal);
+
+    }
+    public static void par(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt();
+        for (int i = 0; i < size; i++) {
+            for(int k = 0; k < size - 1 - i; k++){
+                System.out.print(" ");
+            }
+            for(int j = 0; j < i * 2 + 1; j++){
+                System.out.print(j + 1);
+            }
+            
+            System.out.println();
+        }
+    }
+    public static String[] oddEcho(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int amo = scanner.nextInt();
+        scanner.nextLine(); // Consume the leftover newline
+        
+        List<String> lst = new ArrayList<>();
+        for (int i = 0; i < amo; i++) {
+            String temp = scanner.nextLine();
+            lst.add(temp);
+        }
+        
+        List<String> oddIndexedWords = new ArrayList<>();
+        for (int i = 0; i < amo; i += 2) { 
+            oddIndexedWords.add(lst.get(i));
+        }
+        
+        return oddIndexedWords.toArray(new String[0]);
+    }
     public static void main(String[] args) {
-        iii(args);
+       par(args);
     }
             
         
