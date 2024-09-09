@@ -10,6 +10,7 @@ public class sadasd {
         String numStr = Integer.toString(n);
         int count = 0;
         String str = String.valueOf(n);
+        
         for (int i = 0; i < numStr.length(); i++) {
             if (numStr.charAt(i) == '8') {
                 if (i > 0 && numStr.charAt(i - 1) == '8') {
