@@ -1,4 +1,3 @@
-package hw4so;
 
 import java.util.Scanner;
 

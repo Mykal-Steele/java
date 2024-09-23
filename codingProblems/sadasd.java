@@ -7,6 +7,7 @@ public class sadasd {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
         String numStr = Integer.toString(n);
         int count = 0;
         String str = String.valueOf(n);

@@ -18,6 +18,7 @@ public class Question1 {
             coalInCurrentRound = (i * i) + i; // Compute the number of drinks in the current round
             i++;
         }
+        
 
         round = i - 1;  
 

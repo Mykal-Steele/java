@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Main {
+public class Main2 {
 
     public static void main(String[] args) {
         int[] lst = {2,6,3,8,3, 6,8,5,2};
