@@ -1315,9 +1315,103 @@ public class PackCod {
         
         return oddIndexedWords.toArray(new String[0]);
     }
+    public static void sumoftwodarray(String[] args) {
+        int[][] inp = 
+        {
+            {2,3,4},
+            {4,2,7},
+            {3,2,5}
+        };
+        for(int i = 0; i< inp.length;i++){
+            int largest = Integer.MIN_VALUE;
+            for(int j = 0; j < inp[i].length;j++){
+                
+                largest = inp[i][j] > largest ? inp[i][j] : largest;
+            }
+            System.out.println("the max is " +largest);
+        }
+    }
+    public static void arrswap(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt();
+        int[] arr = new int[size];
+        for(int i = 0; i<size;i++){
+            arr[i] = scanner.nextInt();
+        }
+        int iter=scanner.nextInt();
+        for(int i = 0; i<iter;i++){
+            int first = scanner.nextInt();
+            int sec = scanner.nextInt();
+            int temp = 0;
+            temp = arr[first];
+            arr[first] = arr[sec];
+            arr[sec] = temp;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
     public static void main(String[] args) {
-       par(args);
+       arrswap(args);
     }
             
         
 }
+
+/**import java.util.*;
+public class Main{
+    
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
+        
+        int sum = 0;
+        int counter = 0;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        
+        int[][] arr = new int[rows][cols];
+        for(int i = 0; i< rows; i++){
+            for(int j = 0; j< cols;j++){
+                arr[i][j] = scanner.nextInt();
+                counter++;
+                if(arr[i][j] < min){
+                    min = arr[i][j];
+                }
+                if(arr[i][j] > max){
+                    max = arr[i][j];
+                }
+                sum+=arr[i][j];
+            }
+        }
+        int coun = 0;
+        int[] newarr = new int[rows*cols];
+        for(int i = 0; i< rows; i++){
+            for(int j = 0; j< cols;j++){
+                newarr[coun++] = arr[i][j];
+            }
+        }
+        
+        //medium
+        Arrays.sort(newarr);
+        double medium = 0;
+        int len = newarr.length;
+        
+        if(newarr.length % 2 == 0){
+            
+            medium = (newarr[len/2] + newarr[(len/2) -1])/2.0;
+        }else{
+            medium = newarr[len/2 +1];
+        }
+        
+        //average
+        double avg = sum/(rows*cols);
+        
+        
+        System.out.println("Sum: "+sum);
+        System.out.println("Minimum value: "+min);
+        System.out.println("Maximum value: "+max);
+        System.out.println("Average value: "+avg);
+        System.out.println("Median value: "+medium);
+        
+    }
+} */
