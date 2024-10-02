@@ -24,6 +24,7 @@ public class Location {
         scanner.close();
     }
     
+
     public Location(int r, int c, double maxVal) {
         row = r;
         column = c;
