@@ -1349,8 +1349,11 @@ public class PackCod {
         }
         System.out.println(Arrays.toString(arr));
     }
+    
+    
+    
     public static void main(String[] args) {
-       arrswap(args);
+        arrswap(args);;
     }
             
         
