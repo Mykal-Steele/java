@@ -2,8 +2,8 @@ import pyautogui
 import time
 
 # Number of times to click and hold Shift
-click_count = 50000  # You can adjust this as needed
-click_delay = 0.1   # Delay between clicks (in seconds), adjust as needed
+click_count = 50000  
+click_delay = 0.1   
 
 # 3-second delay to let you prepare
 print("You have 3 seconds to get ready...")
