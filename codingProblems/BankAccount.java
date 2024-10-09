@@ -1,8 +1,15 @@
 import java.util.*;
 
 public class BankAccount {
+        
         private int accId;
         private double balance;
+
+        public BankAccount(int accId, double balance){
+            this.accId = accId;
+            this.balance = balance;
+        }
+        
         public void setAccId(int id){
             accId = id;
         }
