@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.Collections;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.ArrayList;
 public class NextLexiPermu{
@@ -34,30 +33,30 @@ public class NextLexiPermu{
                 System.out.print(arr[i] + " ");
             }
         }else{
-            int pivotIndex = -1;  // Declare outside the loop
+            int pivotIndex = -1;  
             for(int i = size - 1; i >= 1; i--){
                 if(arr[i] - arr[i-1] > 0){
-                    int pivot = arr[i-1];
-                    pivotIndex = i - 1;  // Assign value
+                    
+                    pivotIndex = i - 1;  
                     break;
                 }
             }
             
             HashMap<Integer,Integer> hm = new HashMap<>();
             ArrayList<Integer> arraylist = new ArrayList<>();
-            for(int i = pivotIndex; i < arr.length; i++){  // Fixed array bounds
+            for(int i = pivotIndex; i < arr.length; i++){ 
                 if(i > pivotIndex){
                     arraylist.add(arr[i]);
                 }
-                if(i + 1 < arr.length && arr[i + 1] > arr[i]){  // Fixed array access
+                if(i + 1 < arr.length && arr[i + 1] > arr[i]){  
                     hm.put(arr[i + 1], arr[i + 1] - arr[i]);
                 }
             }
             int Min = Integer.MAX_VALUE;
             int toSwap = 0;
-            for(int key: hm.keySet()){  // Fixed keySet spelling
+            for(int key: hm.keySet()){ 
                 if(hm.get(key) < Min){
-                    Min = hm.get(key);  // Update Min value
+                    Min = hm.get(key); 
                     toSwap = key;
                 }
             }
@@ -67,7 +66,7 @@ public class NextLexiPermu{
             arr[toSwapIndex] = temp;
             Collections.reverse(arraylist);
             int index = 0;
-            for(int i = pivotIndex + 1; i < arr.length && index < arraylist.size(); i++){  // Fixed bounds
+            for(int i = pivotIndex + 1; i < arr.length && index < arraylist.size(); i++){  
                 arr[i] = arraylist.get(index++);
             }
             
