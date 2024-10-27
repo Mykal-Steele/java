@@ -26,5 +26,6 @@ public class Mountain {
                 System.out.println(i + " occurs " + occurrences[i] + " " + (occurrences[i] > 1 ? "times" : "time"));
             }
         }
+        scanner.close();
     }
 }

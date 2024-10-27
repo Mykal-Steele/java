@@ -20,5 +20,6 @@ public class NumberOccurrences {
                 System.out.println();
             }
         }
+        scanner.close();
     }
 }

@@ -37,5 +37,6 @@ public class NineElevenButTrains {
         }     else{
         System.out.println(output);
         }
+        scanner.close();
     }
 }

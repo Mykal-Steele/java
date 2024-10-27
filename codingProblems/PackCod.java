@@ -307,12 +307,14 @@ public class PackCod {
             int year = day /365;
             int las = day % 365;
             System.out.println(year+" " + las);
+            scanner.close();
             
         }
         public static void reverseString(String args[]){
             Scanner scanner = new Scanner(System.in);
-            int len = 3;
-            String[] inp = new String[len];
+          
+           
+            scanner.close();
 
 
         }
@@ -346,6 +348,7 @@ public class PackCod {
                 }
             }
             System.out.println();
+            scanner.close();
         }
         public static void duplicate(String[] args) {
             Scanner scanner = new Scanner(System.in);
@@ -366,6 +369,7 @@ public class PackCod {
             }
     
             System.out.println(emp);
+            scanner.close();
         }
 
         public static void decry(String[] args) {
@@ -399,6 +403,7 @@ public class PackCod {
                     }
                     tempArr[arrIndex++] = ch;
                 }
+                scanner.close();
             }
     
             if (hasDigits) {

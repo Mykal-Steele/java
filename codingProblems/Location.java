@@ -1,4 +1,3 @@
-import java.util.Scanner;
 public class Location {
     public int row;
     public int column;
@@ -52,8 +51,9 @@ public class Location {
        
         return new Location(maxRow, maxCol, maxVal);
     }
+    
 
-  
+    
    
 
    
