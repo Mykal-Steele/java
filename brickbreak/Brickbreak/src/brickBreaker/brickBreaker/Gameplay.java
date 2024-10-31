@@ -11,6 +11,7 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.JPanel;
 
+
 public class Gameplay extends JPanel implements KeyListener, ActionListener{
     private boolean play = false;
     private int score = 0;
@@ -27,6 +28,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
     private int ballposY = 350;
     private int ballXdir = -1;
     private int ballYdir = -2;
+    private int speed = 3;
     
     public Gameplay(){
         addKeyListener(this);
@@ -55,18 +57,26 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
         g.setColor(Color.yellow);
         g.fillOval(ballposX, ballposY, 20, 20);
     }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         timer.start();
+        long timex = 0;
+        
 
         if(play){
             if(new Rectangle(ballposX, ballposY, 20, 20).intersects(new Rectangle(playerX, 550, 100, 8))){
                 ballYdir = -ballYdir;
+                long passed = (System.currentTimeMillis() - timex);
+                if(passed > 10000){
+                    
+                }
+                timex = System.currentTimeMillis();
             }
-            ballposX += ballXdir;
-            ballposY += ballYdir;
+            ballposX += ballXdir * speed;
+            ballposY += ballYdir * speed;
             if(ballposX < 0){
-                ballXdir = -ballXdir;
+                ballXdir = -ballXdir ;
             }
             if(ballposY < 0){
                 ballYdir = -ballYdir;
