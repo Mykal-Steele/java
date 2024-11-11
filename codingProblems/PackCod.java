@@ -371,7 +371,7 @@ public class PackCod {
             System.out.println(emp);
             scanner.close();
         }
-        2
+        
         public static void decry(String[] args) {
             Scanner scanner = new Scanner(System.in);
             String inp = scanner.nextLine();
