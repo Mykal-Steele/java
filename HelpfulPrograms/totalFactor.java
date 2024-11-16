@@ -1,21 +1,22 @@
 package HelpfulPrograms;
+
 import java.util.Scanner;
+
 public class totalFactor {
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number to calculate its prime factors and the total number of factors:");
         System.out.println("There are \"" + totalFac(scanner.nextInt()) + "\" factors in total.");
         scanner.close();
     }
-    
+
     public static int totalFac(int number) {
-        
+
         if (isItPrime(number)) {
             return 2;
         }
         StringBuilder sout = new StringBuilder("The prime factorization of " + number + " is: ");
-
 
         int totalFactors = 1;
         int prime = 2;
